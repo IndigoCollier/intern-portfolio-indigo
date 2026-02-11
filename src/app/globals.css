@@ -1,27 +1,41 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/*
+  DESIGN SYSTEM — Space Girly-Tech Theme
+  
+  Tailwind v4 uses @theme to define custom design tokens.
+  These become usable as Tailwind classes, e.g.:
+    bg-space-dark, text-accent-pink, font-heading, etc.
+*/
+
+@theme {
+    /* Background Colors */
+    --color-space-dark: #0a0a0f;
+    --color-space-card: rgba(20, 15, 35, 0.8);
+    --color-space-card-border: rgba(168, 85, 170, 0.25);
+
+    /* Text Colors */
+    --color-text-primary: #e8e0f0;
+    --color-text-secondary: #9a8eb0;
+
+    /* Accent Colors */
+    --color-accent-pink: #e84393;
+    --color-accent-magenta: #c44dff;
+    --color-accent-gold: #f5a623;
+
+    /* Font Families */
+    --font-heading: var(--font-oxanium), sans-serif;
+    --font-body: var(--font-space-mono), monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* Smooth scrolling for anchor links (nav → section) */
+html {
+    scroll-behavior: smooth;
 }
 
+/* Base body styling */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    background-color: #0a0a0f;
+    color: #e8e0f0;
+    font-family: var(--font-body);
 }
