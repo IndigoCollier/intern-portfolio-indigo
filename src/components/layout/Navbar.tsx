@@ -22,7 +22,6 @@ import { cn } from "@/lib/utils";
  */
 
 const NAV_ITEMS = [
-    { label: "Home", href: "#home" },
     { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#projects" },
     { label: "Experience", href: "#experience" },
