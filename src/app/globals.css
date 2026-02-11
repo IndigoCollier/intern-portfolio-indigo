@@ -26,6 +26,54 @@
     /* Font Families */
     --font-heading: var(--font-oxanium), sans-serif;
     --font-body: var(--font-space-mono), monospace;
+
+    /* Animations */
+    --animate-twinkle: twinkle 3s ease-in-out infinite;
+    --animate-shooting-star: shooting-star 5s linear infinite;
+    --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
+
+    /* Keyframes */
+    @keyframes twinkle {
+
+        0%,
+        100% {
+            opacity: 0.2;
+            transform: scale(0.8);
+        }
+
+        50% {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+    }
+
+    @keyframes shooting-star {
+        0% {
+            transform: translateX(0) translateY(0) rotate(225deg);
+            opacity: 1;
+        }
+
+        20% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateX(-500px) translateY(500px) rotate(225deg);
+            opacity: 0;
+        }
+    }
+
+    @keyframes fade-in-up {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 }
 
 /* Smooth scrolling for anchor links (nav → section) */
@@ -38,4 +86,22 @@ body {
     background-color: #0a0a0f;
     color: #e8e0f0;
     font-family: var(--font-body);
+}
+
+/* Utility class for section animations */
+.animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    ::before,
+    ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
