@@ -1,10 +1,29 @@
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+
+/**
+ * Home page — Main single-page entry point
+ *
+ * Currently shows the Navbar and Footer with a placeholder in between.
+ * In Task 5, the placeholder will be replaced with all six sections:
+ * Hero → Skills → Projects → Experience → About → Contact
+ */
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <h1 className="text-4xl font-bold">Indigo's Portfolio</h1>
-        <p>Coming soon...</p>
-      </div>
-    </main>
+    <>
+      <Navbar />
+      <main className="pt-16 min-h-screen">
+        {/* pt-16 adds padding-top to account for the fixed navbar height */}
+        <div className="max-w-6xl mx-auto px-4 py-20">
+          <h1 className="text-4xl font-heading font-bold text-text-primary">
+            Indigo&apos;s Portfolio
+          </h1>
+          <p className="text-text-secondary mt-4 font-body">
+            Coming soon...
+          </p>
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }
