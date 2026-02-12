@@ -37,9 +37,9 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
         if (distance === 0) {
             return "translate-x-0 scale-100 opacity-100 z-20 pointer-events-auto";
         } else if (distance === 1 || distance === -projects.length + 1) {
-            return "translate-x-[60%] scale-75 opacity-40 z-10 pointer-events-auto cursor-pointer"; // Right
+            return "translate-x-[75%] scale-75 opacity-40 z-10 pointer-events-auto cursor-pointer"; // Right
         } else if (distance === -1 || distance === projects.length - 1) {
-            return "-translate-x-[60%] scale-75 opacity-40 z-10 pointer-events-auto cursor-pointer"; // Left
+            return "-translate-x-[75%] scale-75 opacity-40 z-10 pointer-events-auto cursor-pointer"; // Left
         } else {
             return "opacity-0 scale-50 z-0 pointer-events-none"; // Hidden/Back
         }
@@ -57,7 +57,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
     };
 
     return (
-        <div className="relative w-full max-w-6xl mx-auto h-[700px] flex items-center justify-center">
+        <div className="relative w-full max-w-full mx-auto h-[700px] flex items-center justify-center">
 
             {/* Carousel Container */}
             <div className="relative w-full h-full flex items-center justify-center perspective-1000">
@@ -68,7 +68,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
                         <div
                             key={project.id}
                             className={cn(
-                                "absolute w-[90%] md:w-[60%] max-w-xl transition-all duration-500 ease-in-out transform",
+                                "absolute w-[90%] md:w-[60%] max-w-2xl transition-all duration-500 ease-in-out transform",
                                 styles
                             )}
                             onClick={() => handleCardClick(index)}

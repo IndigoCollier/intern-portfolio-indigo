@@ -1,6 +1,6 @@
 # Project Progress Tracker
 
-**Last Updated:** Feb 11, 2026
+**Last Updated:** Feb 12, 2026
 
 ---
 
@@ -11,8 +11,8 @@
 | Heading font | Oxanium | Geometric, futuristic — fits space/tech theme |
 | Body font | Space Mono | Monospace reinforces developer aesthetic |
 | Tailwind version | v4 | Uses `@theme` in CSS instead of `tailwind.config.ts` |
-| Branch naming | `<type>/<ticket>-<description>` | e.g., `feat/task-4-reusable-components` |
-| Commit format | `<type>(<scope>): <subject>` + body + footer | Conventional commits with scope and ticket ref |
+| Branch naming | `<type>/<ticket>-<description>` | e.g., `feat/task-5-core-pages` |
+| Commit format | `<type>(<scope>): <subject>` | Conventional commits |
 | Docs in repo | Yes | Shows planning process for Task 8 presentation |
 | Private docs | `docs/private/` in `.gitignore` | ClickUp screenshots excluded from GitHub |
 
@@ -33,18 +33,19 @@
 - Branch: `docs/task-3-wireframe-mockup` → merged to main
 
 ### Task 4: Reusable Components ✅
-- **Design system** set up in `src/app/globals.css` (Tailwind v4 `@theme` with space theme colors)
-- **Fonts** configured in `src/app/layout.tsx` (Oxanium + Space Mono via `next/font/google`)
-- **Metadata** updated (title: "Indigo's Portfolio")
-- **Components built:**
-  - `src/components/layout/Navbar.tsx` — fixed nav, scroll-spy active state, mobile hamburger menu
-  - `src/components/layout/Footer.tsx` — copyright + GitHub/LinkedIn social links
-  - `src/components/ui/Button.tsx` — primary/outline/ghost variants, polymorphic `<a>`/`<button>`
-  - `src/components/ui/Card.tsx` — glass-morphism wrapper with hover lift
-- **Hook:** `src/hooks/useScrollSpy.ts` — IntersectionObserver section tracking
-- **Utility:** `src/lib/utils.ts` — `cn()` class name merge function
-- **Folders scaffolded:** `sections/`, `forms/`, `data/` (with `.gitkeep`)
+- **Design system** set up in `src/app/globals.css`
+- **Fonts** configured (Oxanium + Space Mono)
+- **Components built:** Navbar, Footer, Button, Card
+- **Hook:** `src/hooks/useScrollSpy.ts`
 - Branch: `feat/task-4-reusable-components` → merged to main
+
+### Task 5: Core Pages ✅
+- **All Sections Built:** Hero, Skills, Projects, Experience, About, Contact
+- **Supporting Components:** StarBackground, ProgressBar, ProjectCarousel, ProjectCard, TimelineItem
+- **Data Files:** All populated with real content
+- **UI Polish:** 135° shooting stars, glitch effects, pulsing nav glow, maximized project layout
+- **Resume:** Download button added and linked
+- Branch: `feat/task-5-core-pages` → merged to main
 
 ---
 
@@ -77,25 +78,11 @@ src/
 
 ## Next Up
 
-### Task 5: Core Pages (Day 6–8) — NOT STARTED
-**Branch:** `feat/task-5-core-pages`
+### Task 6: Deployment (Day 9) — NOT STARTED
+- Deploy to Vercel
+- Update README with live link
 
-Build all six scroll sections + data files:
-
-1. **HeroSection** — animated star background, name, title, CTAs, resume download
-2. **SkillsSection** — skill cards with animated progress bars + `data/skills.ts`
-3. **ProjectsSection** — carousel with project cards + `data/projects.ts`
-4. **ExperienceSection** — vertical timeline + `data/experience.ts`
-5. **AboutSection** — 3-column highlight cards
-6. **ContactSection** — form layout (visual only, wired up in Task 7)
-7. Assemble all sections in `page.tsx`
-8. Test responsiveness at 375px, 390px, 768px, 1024px, 1440px
-
-Also need to build supporting UI components:
-- `StarBackground.tsx`, `ProgressBar.tsx`, `ProjectCarousel.tsx`
-- `ProjectCard.tsx`, `TimelineItem.tsx`
-
-### Remaining Tasks After Task 5
-- **Task 6:** Deploy to Vercel + update README with live link
-- **Task 7:** Dark mode toggle, animations, contact form (Formspree)
-- **Task 8:** Final review & presentation prep
+### Task 7: Stretch Tasks (Day 10) — [/]
+- Dark mode toggle (Postponed)
+- Contact form logic (Formspree) ✅
+- Scroll animations [/]
