@@ -33,4 +33,4 @@ See the `/docs` folder for detailed plans:
 - [User Story](./docs/UserStory.md)
 
 ## Live Site
-🔗 [Coming Soon]
+🔗 [intern-portfolio-indigo.vercel.app](https://intern-portfolio-indigo.vercel.app/)
