@@ -25,7 +25,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* Main Heading */}
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-heading mb-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-heading mb-6 animate-fade-in-up glitch-text" style={{ animationDelay: "0.2s" }}>
                     <span className="text-text-primary">Welcome. I&apos;m </span>
                     <span className="bg-gradient-to-r from-accent-pink to-accent-gold bg-clip-text text-transparent">
                         Indigo
@@ -34,15 +34,15 @@ export default function HeroSection() {
 
                 {/* Intro Paragraph */}
                 <p className="max-w-2xl mx-auto text-lg md:text-xl text-text-secondary font-body leading-relaxed mb-10 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-                    Every great mission starts with a single launch. Six months ago I entered orbit in the frontend universe — now I&apos;m navigating through galaxies of code, exploring new frontiers one pixel at a time. Still ascending, always curious, building toward something bigger than what I can see from here.
+                    I've launched into the software development universe and never looked back. Currently turning ideas into interfaces, one constellation of code at a time.
                 </p>
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row items-center gap-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-                    <Button href="#skills" variant="primary">
+                    <Button href="#skills" variant="primary" className="glitch-text">
                         View My Skills
                     </Button>
-                    <Button href="#contact" variant="outline">
+                    <Button href="#contact" variant="outline" className="glitch-text">
                         Get In Touch
                     </Button>
                 </div>

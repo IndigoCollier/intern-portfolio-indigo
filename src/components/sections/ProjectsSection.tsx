@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
  */
 export default function ProjectsSection() {
     return (
-        <div className="max-w-6xl mx-auto px-4 py-20">
+        <div className="max-w-7xl mx-auto px-4 py-20">
             {/* Section Header */}
             <div className="text-center mb-16 animate-fade-in-up">
                 <span className="text-accent-pink tracking-widest font-heading text-sm uppercase">
