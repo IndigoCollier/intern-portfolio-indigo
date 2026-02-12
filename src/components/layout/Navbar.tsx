@@ -40,56 +40,58 @@ export default function Navbar() {
     const activeSection = useScrollSpy(SECTION_IDS);
 
     return (
-        <nav className="fixed top-0 left-0 w-full z-50 bg-space-dark/80 backdrop-blur-md border-b border-space-card-border">
-            <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-                {/* Logo — pink brackets with "portfolio" text */}
-                <a href="#home" className="flex items-center gap-1 font-heading text-lg">
-                    <span className="text-accent-pink">&lt;/&gt;</span>
-                    <span className="text-text-primary">portfolio</span>
-                </a>
+        <>
+            <nav className="fixed top-0 left-0 w-full z-50 bg-space-dark/80 backdrop-blur-md border-b border-space-card-border">
+                <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+                    {/* Logo — pink brackets with "portfolio" text */}
+                    <a href="#home" className="flex items-center gap-1 font-heading text-lg">
+                        <span className="text-accent-pink">&lt;/&gt;</span>
+                        <span className="text-text-primary">portfolio</span>
+                    </a>
 
-                {/* Desktop nav links — hidden on mobile, shown on lg (1024px+) */}
-                <ul className="hidden lg:flex items-center gap-1">
-                    {NAV_ITEMS.map((item) => {
-                        // Check if this link's section is the currently active one
-                        const isActive = activeSection === item.href.replace("#", "");
+                    {/* Desktop nav links — hidden on mobile, shown on md (768px+) */}
+                    <ul className="hidden md:flex items-center gap-1">
+                        {NAV_ITEMS.map((item) => {
+                            // Check if this link's section is the currently active one
+                            const isActive = activeSection === item.href.replace("#", "");
 
-                        return (
-                            <li key={item.href}>
-                                <a
-                                    href={item.href}
-                                    className={cn(
-                                        // Base styles for all nav links
-                                        "px-4 py-2 rounded-full text-sm font-body transition-all duration-300",
-                                        // Conditional: active = pink pill, inactive = muted text with hover
-                                        isActive
-                                            ? "bg-accent-pink/20 text-accent-pink"
-                                            : "text-text-secondary hover:text-text-primary"
-                                    )}
-                                >
-                                    {item.label}
-                                </a>
-                            </li>
-                        );
-                    })}
-                </ul>
+                            return (
+                                <li key={item.href}>
+                                    <a
+                                        href={item.href}
+                                        className={cn(
+                                            // Base styles for all nav links
+                                            "px-4 py-2 rounded-full text-sm font-body transition-all duration-300",
+                                            // Conditional: active = pink pill, inactive = muted text with hover
+                                            isActive
+                                                ? "bg-accent-pink/20 text-accent-pink nav-pulse"
+                                                : "text-text-secondary hover:text-text-primary"
+                                        )}
+                                    >
+                                        {item.label}
+                                    </a>
+                                </li>
+                            );
+                        })}
+                    </ul>
 
-                {/* Theme toggle placeholder — will be built in Task 7 */}
-                <div className="hidden lg:block w-10" />
+                    {/* Theme toggle placeholder — will be built in Task 7 */}
+                    <div className="hidden md:block w-10" />
 
-                {/* Mobile hamburger button — shown below lg, hidden on desktop */}
-                <button
-                    className="lg:hidden text-text-primary p-2"
-                    onClick={() => setIsMobileMenuOpen(true)}
-                    aria-label="Open navigation menu"
-                >
-                    <Menu size={24} />
-                </button>
-            </div>
+                    {/* Mobile hamburger button — shown below md, hidden on desktop */}
+                    <button
+                        className="flex md:hidden items-center text-text-primary p-2 z-50 border border-space-card-border rounded-lg"
+                        onClick={() => setIsMobileMenuOpen(true)}
+                        aria-label="Open navigation menu"
+                    >
+                        <Menu size={24} />
+                    </button>
+                </div>
+            </nav>
 
-            {/* Mobile menu overlay — slides in from the right when open */}
+            {/* Mobile menu overlay — OUTSIDE the nav so it has its own stacking context */}
             {isMobileMenuOpen && (
-                <div className="fixed inset-0 z-50 bg-space-dark/95 backdrop-blur-lg lg:hidden">
+                <div className="fixed inset-0 z-[100] md:hidden" style={{ backgroundColor: '#0a0a0f' }}>
                     <div className="flex justify-end p-4">
                         <button
                             onClick={() => setIsMobileMenuOpen(false)}
@@ -125,6 +127,6 @@ export default function Navbar() {
                     </ul>
                 </div>
             )}
-        </nav>
+        </>
     );
 }

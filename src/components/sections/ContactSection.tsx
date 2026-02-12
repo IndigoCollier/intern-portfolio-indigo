@@ -10,7 +10,7 @@ import Button from "@/components/ui/Button";
  */
 export default function ContactSection() {
     return (
-        <div className="max-w-4xl mx-auto px-4 py-20">
+        <div className="max-w-6xl mx-auto px-4 py-20">
             {/* Section Header */}
             <div className="text-center mb-16 animate-fade-in-up">
                 <span className="text-accent-pink tracking-widest font-heading text-sm uppercase">
