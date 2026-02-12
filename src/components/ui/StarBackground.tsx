@@ -83,15 +83,9 @@ export default function StarBackground() {
             ))}
 
             {/* Layer 3: Shooting Stars (using CSS animation defined in globals.css) */}
-            {/*
-         - w-[300px]: Long streak for speed effect
-         - bg-gradient-to-r from-transparent to-white:
-             With 135deg rotation, Right (White) becomes Bottom-Left (Head).
-             Left (Transparent) becomes Top-Right (Tail).
-      */}
-            <div className="absolute top-[-10%] right-[20%] w-[300px] h-[2px] bg-gradient-to-r from-transparent to-white shadow-[0_0_20px_2px_rgba(255,255,255,0.4)] animate-shooting-star opacity-0" style={{ animationDelay: "2s", animationDuration: "3s" }} />
-            <div className="absolute top-[10%] right-[-5%] w-[300px] h-[2px] bg-gradient-to-r from-transparent to-white shadow-[0_0_20px_2px_rgba(255,255,255,0.4)] animate-shooting-star opacity-0" style={{ animationDelay: "5s", animationDuration: "4s" }} />
-            <div className="absolute top-[0%] right-[30%] w-[300px] h-[2px] bg-gradient-to-r from-transparent to-white shadow-[0_0_20px_2px_rgba(255,255,255,0.4)] animate-shooting-star opacity-0" style={{ animationDelay: "9s", animationDuration: "3.5s" }} />
+            <div className="absolute top-[-10%] right-[20%] w-[300px] h-[2px] opacity-0 bg-gradient-to-r from-transparent to-white shadow-[0_0_20px_2px_rgba(255,255,255,0.4)] animate-shooting-star" style={{ animationDelay: "2s", animationDuration: "3s", transform: "rotate(135deg)" }} />
+            <div className="absolute top-[10%] right-[-5%] w-[300px] h-[2px] opacity-0 bg-gradient-to-r from-transparent to-white shadow-[0_0_20px_2px_rgba(255,255,255,0.4)] animate-shooting-star" style={{ animationDelay: "5s", animationDuration: "4s", transform: "rotate(135deg)" }} />
+            <div className="absolute top-[0%] right-[30%] w-[300px] h-[2px] opacity-0 bg-gradient-to-r from-transparent to-white shadow-[0_0_20px_2px_rgba(255,255,255,0.4)] animate-shooting-star" style={{ animationDelay: "9s", animationDuration: "3.5s", transform: "rotate(135deg)" }} />
         </div>
     );
 }

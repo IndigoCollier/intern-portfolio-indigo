@@ -31,6 +31,8 @@
     --animate-twinkle: twinkle 3s ease-in-out infinite;
     --animate-shooting-star: shooting-star 5s linear infinite;
     --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
+    --animate-glitch: glitch 3s infinite;
+    --animate-glow-pulse: glow-pulse 2s ease-in-out infinite;
 
     /* Keyframes */
     @keyframes twinkle {
@@ -74,28 +76,91 @@
             transform: translateY(0);
         }
     }
+
+    @keyframes glitch {
+
+        0%,
+        2%,
+        4%,
+        6%,
+        8%,
+        100% {
+            text-shadow: none;
+            transform: translate(0);
+        }
+
+        1% {
+            text-shadow: 2px 0 #e84393, -2px 0 #00d2ff;
+            transform: translate(-1px, 1px);
+        }
+
+        3% {
+            text-shadow: -2px 0 #e84393, 2px 0 #00d2ff;
+            transform: translate(1px, -1px);
+        }
+
+        5% {
+            text-shadow: 1px 0 #e84393, -1px 0 #00d2ff;
+            transform: translate(0, 1px);
+        }
+
+        7% {
+            text-shadow: -1px 0 #e84393, 1px 0 #00d2ff;
+            transform: translate(1px, 0);
+        }
+    }
+
+    @keyframes glow-pulse {
+
+        0%,
+        100% {
+            opacity: 0.3;
+            transform: scale(1);
+            filter: blur(15px);
+        }
+
+        50% {
+            opacity: 0.6;
+            transform: scale(1.1);
+            filter: blur(20px);
+        }
+    }
+
+    @keyframes nav-pulse {
+
+        0%,
+        100% {
+            box-shadow: 0 0 4px rgba(232, 67, 147, 0.3), 0 0 8px rgba(232, 67, 147, 0.1);
+        }
+
+        50% {
+            box-shadow: 0 0 8px rgba(232, 67, 147, 0.6), 0 0 20px rgba(232, 67, 147, 0.3), 0 0 40px rgba(232, 67, 147, 0.1);
+        }
+    }
 }
 
-/* Smooth scrolling for anchor links (nav → section) */
+/* Smooth scrolling for anchor links */
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
 
-/* Base body styling */
-body {
-    background-color: #0a0a0f;
-    color: #e8e0f0;
-    font-family: var(--font-body);
-    overflow-x: hidden;
-}
-
-/* Utility class for section animations */
+/* Base utility for fade-in (can be used alone or via ScrollReveal) */
 .animate-fade-in-up {
     animation: fade-in-up 0.8s ease-out forwards;
 }
 
-/* Respect user preference for reduced motion */
+/* Glitch utility */
+.glitch-text {
+    animation: glitch 3s infinite;
+}
+
+/* Nav pulse utility — explicitly using the theme keyframe */
+.nav-pulse {
+    animation: nav-pulse 2s ease-in-out infinite;
+}
+
+/* Handle reduced motion */
 @media (prefers-reduced-motion: reduce) {
 
     *,
@@ -105,72 +170,5 @@ body {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
-    }
-}
-
-/* ─── Glitch text effect ─── */
-/* Creates brief color-shifted flickers on text using layered text-shadows.
-   Most of the animation is "calm" (no distortion), with short bursts of glitch. */
-.glitch-text {
-    animation: glitch 3s infinite;
-}
-
-@keyframes glitch {
-
-    0%,
-    2%,
-    4%,
-    6%,
-    8%,
-    100% {
-        text-shadow: none;
-        transform: translate(0);
-    }
-
-    1% {
-        text-shadow:
-            2px 0 #e84393,
-            -2px 0 #00d2ff;
-        transform: translate(-1px, 1px);
-    }
-
-    3% {
-        text-shadow:
-            -2px 0 #e84393,
-            2px 0 #00d2ff;
-        transform: translate(1px, -1px);
-    }
-
-    5% {
-        text-shadow:
-            1px 0 #e84393,
-            -1px 0 #00d2ff;
-        transform: translate(0, 1px);
-    }
-
-    7% {
-        text-shadow:
-            -1px 0 #e84393,
-            1px 0 #00d2ff;
-        transform: translate(1px, 0);
-    }
-}
-
-/* ─── Nav tab pulsing glow ─── */
-/* Soft breathing glow effect for the currently active navigation tab.
-   Uses box-shadow to create an illuminated "lit up" indicator. */
-.nav-pulse {
-    animation: nav-pulse 2s ease-in-out infinite;
-}
-
-@keyframes nav-pulse {
-
-    0%,
-    100% {
-        box-shadow: 0 0 4px rgba(232, 67, 147, 0.3), 0 0 8px rgba(232, 67, 147, 0.1);
-    }
-
-    50% {
-        box-shadow: 0 0 8px rgba(232, 67, 147, 0.6), 0 0 20px rgba(232, 67, 147, 0.3), 0 0 40px rgba(232, 67, 147, 0.1);
     }
 }

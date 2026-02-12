@@ -53,8 +53,8 @@ export default function ContactSection() {
                     Get In Touch
                 </h2>
                 <p className="max-w-2xl mx-auto text-text-secondary font-body">
-                    I&apos;m currently open to opportunities and would love to connect.
-                    Whether you have a question or just want to say hi, feel free to reach out.
+                    Hey there! I would love to connect with you.
+                    Please feel free to reach out and let's chat!
                 </p>
             </ScrollReveal>
 
@@ -104,7 +104,7 @@ export default function ContactSection() {
                             id="subject"
                             name="subject"
                             required
-                            placeholder="What's this about?"
+                            placeholder="What's on your mind?"
                             className="w-full bg-space-light/5 border border-space-card-border/30 rounded-lg px-4 py-3 text-text-primary focus:outline-none focus:border-accent-pink focus:ring-1 focus:ring-accent-pink transition-all"
                         />
                     </div>
@@ -119,14 +119,14 @@ export default function ContactSection() {
                             name="message"
                             required
                             rows={6}
-                            placeholder="Tell me what's on your mind..."
+                            placeholder="Explain it here..."
                             className="w-full bg-space-light/5 border border-space-card-border/30 rounded-lg px-4 py-3 text-text-primary focus:outline-none focus:border-accent-pink focus:ring-1 focus:ring-accent-pink transition-all resize-none"
                         />
                     </div>
 
                     {/* Status Messages */}
                     {status === "SUCCESS" && (
-                        <div className="p-4 bg-green-500/10 border border-green-500/50 rounded-lg text-green-500 text-center animate-fade-in-up">
+                        <div className="p-4 bg-accent-gold/10 border border-accent-gold/50 rounded-lg text-accent-gold text-center animate-fade-in-up">
                             Message sent successfully! I&apos;ll get back to you soon.
                         </div>
                     )}

@@ -22,7 +22,7 @@ export default function ExperienceSection() {
                     Experience
                 </h2>
                 <p className="max-w-2xl mx-auto text-text-secondary font-body">
-                    The milestones that shaped my path into frontend development.
+                    These are my milestones that shaped my path into frontend development.
                 </p>
             </ScrollReveal>
 
