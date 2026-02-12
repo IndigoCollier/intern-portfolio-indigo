@@ -13,7 +13,7 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
         <Card className={cn("overflow-hidden flex flex-col h-full group p-0", className)}>
 
             {/* Top Half: Image Area */}
-            <div className="relative h-48 bg-space-light/5 border-b border-space-card-border/50 flex items-center justify-center overflow-hidden">
+            <div className="relative h-64 bg-space-light/5 border-b border-space-card-border/50 flex items-center justify-center overflow-hidden">
                 {project.image ? (
                     <img
                         src={project.image}
@@ -54,14 +54,14 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
             </div>
 
             {/* Bottom Half: Content */}
-            <div className="p-6 flex flex-col flex-grow">
+            <div className="p-8 flex flex-col flex-grow">
                 <div className="flex justify-between items-start mb-3">
                     <h3 className="font-heading font-bold text-xl text-text-primary group-hover:text-accent-pink transition-colors">
                         {project.title}
                     </h3>
                 </div>
 
-                <p className="text-text-secondary text-sm font-body mb-4 line-clamp-3 flex-grow">
+                <p className="text-text-secondary text-sm font-body mb-4 flex-grow">
                     {project.description}
                 </p>
 
