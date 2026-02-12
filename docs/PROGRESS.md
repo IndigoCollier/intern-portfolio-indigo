@@ -83,6 +83,6 @@ src/
 - Update README with live link
 
 ### Task 7: Stretch Tasks (Day 10) — [/]
-- Dark mode toggle
+- Dark mode toggle (Postponed)
 - Contact form logic (Formspree) ✅
-- Scroll animations
+- Scroll animations [/]

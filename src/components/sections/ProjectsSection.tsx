@@ -1,5 +1,6 @@
 import { PROJECTS_DATA } from "@/data/projects";
 import ProjectCarousel from "@/components/ui/ProjectCarousel";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 import { cn } from "@/lib/utils";
 
 /**
@@ -12,7 +13,7 @@ export default function ProjectsSection() {
     return (
         <div className="max-w-screen-2xl mx-auto px-4 py-20">
             {/* Section Header */}
-            <div className="text-center mb-16 animate-fade-in-up">
+            <ScrollReveal className="text-center mb-16">
                 <span className="text-accent-pink tracking-widest font-heading text-sm uppercase">
                     My Work
                 </span>
@@ -20,14 +21,14 @@ export default function ProjectsSection() {
                     Projects
                 </h2>
                 <p className="max-w-2xl mx-auto text-text-secondary font-body">
-                    A collection of things I&apos;ve built along the way. Each one taught me something new.
+                    Here is a collection of my projects that speak to my heart, my skillset, and my mission.
                 </p>
-            </div>
+            </ScrollReveal>
 
             {/* Projects Carousel */}
-            <div className="animate-fade-in-up delay-200">
+            <ScrollReveal delay={200} distance={50}>
                 <ProjectCarousel projects={PROJECTS_DATA} />
-            </div>
+            </ScrollReveal>
         </div>
     );
 }

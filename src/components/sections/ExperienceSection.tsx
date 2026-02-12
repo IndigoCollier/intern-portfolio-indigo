@@ -2,6 +2,7 @@
 
 import { EXPERIENCE_DATA } from "@/data/experience";
 import TimelineItem from "@/components/ui/TimelineItem";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 /**
  * ExperienceSection
@@ -13,7 +14,7 @@ export default function ExperienceSection() {
     return (
         <div className="max-w-6xl mx-auto px-4 py-20">
             {/* Section Header */}
-            <div className="text-center mb-16 animate-fade-in-up">
+            <ScrollReveal className="text-center mb-16">
                 <span className="text-accent-pink tracking-widest font-heading text-sm uppercase">
                     My Timeline
                 </span>
@@ -23,18 +24,20 @@ export default function ExperienceSection() {
                 <p className="max-w-2xl mx-auto text-text-secondary font-body">
                     The milestones that shaped my path into frontend development.
                 </p>
-            </div>
+            </ScrollReveal>
 
             {/* Timeline */}
-            <div className="relative">
-                {EXPERIENCE_DATA.map((item, index) => (
-                    <TimelineItem
-                        key={item.id}
-                        experience={item}
-                        isLast={index === EXPERIENCE_DATA.length - 1}
-                    />
-                ))}
-            </div>
+            <ScrollReveal key="timeline" distance={40}>
+                <div className="relative">
+                    {EXPERIENCE_DATA.map((item, index) => (
+                        <TimelineItem
+                            key={item.id}
+                            experience={item}
+                            isLast={index === EXPERIENCE_DATA.length - 1}
+                        />
+                    ))}
+                </div>
+            </ScrollReveal>
         </div>
     );
 }
