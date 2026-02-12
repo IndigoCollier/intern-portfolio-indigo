@@ -13,34 +13,30 @@ export interface Project {
 export const PROJECTS_DATA: Project[] = [
     {
         id: "project-1",
-        title: "Project One",
-        description: "A brief description of your project. What it does, the problem it solves, and what you learned building it.",
-        tags: ["React", "Tailwind CSS", "Node.js"],
+        title: "Lo and Lady Labs",
+        description: "Lo and Lady Labs is a React-based puppy adoption platform with advanced search, interactive galleries, and streamlined inquiry workflows.",
+        tags: ["React", "Node.js"],
         liveUrl: "https://example.com",
         repoUrl: "https://github.com/example/repo",
+        image: "/projects/project-1.png",
     },
     {
         id: "project-2",
-        title: "Project Two",
-        description: "A brief description of your project. What it does, the problem it solves, and what you learned building it.",
-        tags: ["TypeScript", "Next.js", "API Integration"],
+        title: "Zodiac Countdown",
+        description: "A fun, interactive web app where users can select their birthdate and watch a countdown to their next birthday — complete with a personalized zodiac theme, seasonal messages, and in-depth yearly horoscopes.",
+        tags: ["HTML5", "CSS3", "Clipboard API", "JavaScript", "Audio API"],
         liveUrl: "https://example.com",
         repoUrl: "https://github.com/example/repo",
+        image: "/projects/project-2.png",
     },
     {
         id: "project-3",
-        title: "Project Three",
-        description: "A brief description of your project. What it does, the problem it solves, and what you learned building it.",
+        title: "Rescue Tennessee",
+        description: "A comprehensive donation platform that connects potential donors with dog rescue organizations across Tennessee.",
         tags: ["HTML", "CSS", "JavaScript"],
         liveUrl: "https://example.com",
         repoUrl: "https://github.com/example/repo",
-    },
-    {
-        id: "project-4",
-        title: "Project Four",
-        description: "A brief description of your project. What it does, the problem it solves, and what you learned building it.",
-        tags: ["React", "State Management", "Design System"],
-        liveUrl: "https://example.com",
-        repoUrl: "https://github.com/example/repo",
-    },
+        image: "/projects/project-3.png",
+    }
+
 ];
