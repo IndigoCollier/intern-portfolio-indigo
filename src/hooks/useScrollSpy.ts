@@ -24,7 +24,7 @@ export function useScrollSpy(
     sectionIds: string[],
     offset: number = 80
 ): string {
-    const [activeId, setActiveId] = useState<string>(sectionIds[0] || "");
+    const [activeId, setActiveId] = useState<string>("");
 
     useEffect(() => {
         const observer = new IntersectionObserver(

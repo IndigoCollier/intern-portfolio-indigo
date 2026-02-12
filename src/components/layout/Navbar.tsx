@@ -30,7 +30,9 @@ const NAV_ITEMS = [
 ];
 
 // Extract just the IDs (without #) for the scroll-spy hook
-const SECTION_IDS = NAV_ITEMS.map((item) => item.href.replace("#", ""));
+// We include "home" at the start so that when we're at the top,
+// no other nav item is active by default.
+const SECTION_IDS = ["home", ...NAV_ITEMS.map((item) => item.href.replace("#", ""))];
 
 export default function Navbar() {
     // Controls whether the mobile menu is open or closed
