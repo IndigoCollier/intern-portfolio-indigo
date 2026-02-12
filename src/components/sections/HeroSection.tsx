@@ -45,6 +45,14 @@ export default function HeroSection() {
                     <Button href="#contact" variant="outline" className="glitch-text">
                         Get In Touch
                     </Button>
+                    <Button
+                        href="/resume/Indigo-Resume.pdf"
+                        variant="ghost"
+                        className="text-accent-pink hover:bg-accent-pink/10"
+                        download="Indigo-Resume.pdf"
+                    >
+                        Download Resume
+                    </Button>
                 </div>
             </div>
 

@@ -39,6 +39,7 @@ interface ButtonProps {
     disabled?: boolean;
     type?: "button" | "submit" | "reset";
     className?: string;
+    download?: string;
 }
 
 export default function Button({
@@ -49,6 +50,7 @@ export default function Button({
     disabled = false,
     type = "button",
     className,
+    download,
 }: ButtonProps) {
     // Shared styles applied to both <a> and <button> versions
     const sharedStyles = cn(
@@ -71,7 +73,7 @@ export default function Button({
     // If href is provided, render as a link
     if (href) {
         return (
-            <a href={href} className={sharedStyles}>
+            <a href={href} className={sharedStyles} download={download}>
                 {children}
             </a>
         );
