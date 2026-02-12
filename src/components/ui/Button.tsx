@@ -55,7 +55,7 @@ export default function Button({
     // Shared styles applied to both <a> and <button> versions
     const sharedStyles = cn(
         // Base layout and typography
-        "inline-flex items-center justify-center px-6 py-3 rounded-full font-body text-sm",
+        "inline-flex items-center justify-center px-6 py-3 rounded-full font-body text-sm cursor-pointer",
         // Smooth hover transitions
         "transition-all duration-300",
         // Slight scale-up on hover for interactivity feel

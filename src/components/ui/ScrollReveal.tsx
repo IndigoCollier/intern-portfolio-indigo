@@ -44,8 +44,8 @@ export default function ScrollReveal({
                 }
             },
             {
-                threshold: 0.1,
-                rootMargin: "0px 0px -50px 0px", // Trigger slightly before the element fully enters
+                threshold: 0.01,
+                rootMargin: "0px",
             }
         );
 
